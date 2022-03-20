@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const squares = []
     let score = 0
 
-
     const candyColors = [
         'url(images/red-candy.png)',
         'url(images/yellow-candy.png)',
@@ -14,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
         'url(images/green-candy.png)',
         'url(images/blue-candy.png)'
     ]
-
 
     //create your board
     function createBoard() {
@@ -102,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //for row of Four
     function checkRowForFour() {
         for (i = 0; i < 60; i++) {
-            let rowOfFour = [i, i + 1, i + 2, i + 4]
+            let rowOfFour = [i, i + 1, i + 2, i + 3]
             let decidedColor = squares[i].style.backgroundImage
             const isBlank = squares[i].style.backgroundImage === ''
 
@@ -177,10 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     checkColumnForThree()
 
-
     // Checks carried out indefintely - Add Button to clear interval for best practise, or clear on game over/game won. If you have this indefinite check you can get rid of calling the check functions above.
-
-
     window.setInterval(function() {
         checkRowForFour()
         checkColumnForFour()
